@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { signInWithGoogle } from "@/lib/google-sign-in";
 import { useRouter } from "next/navigation";
 
-const REPO = "https://github.com/ParthKadam11/CEX";
+const REPO = "https://github.com/ParthKadam11/PaperDesk";
 
 const WRITING = [
   {
@@ -115,14 +115,17 @@ export function Hero() {
 
         <figure className="mt-12 sm:mt-14">
           <div className="overflow-hidden border border-border bg-foreground">
-            {/* eslint-disable-next-line @next/next/no-img-element -- Next/Image was upscaling past the source width */}
-            <img
-              src="/product-shot.png"
-              alt="PaperDesk spot desk: SOL-USD chart, order book, and order ticket"
-              width={1183}
-              height={585}
-              decoding="async"
+            <video
+              src="/PaperDesk.mp4"
+              poster="/product-shot.png"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
               className="block h-auto w-full"
+              aria-label="PaperDesk spot desk: SOL-USD chart, order book, and order ticket"
             />
           </div>
           <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 text-[13px] text-muted-foreground">
