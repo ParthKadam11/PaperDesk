@@ -10,6 +10,7 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped
 
   postgres:
     image: postgres:16-alpine
@@ -26,6 +27,7 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped
 
   timescale:
     image: timescale/timescaledb:latest-pg16
@@ -42,6 +44,7 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped
 
   # Host network so scrapes can reach PM2 apps bound to 127.0.0.1.
   prometheus:

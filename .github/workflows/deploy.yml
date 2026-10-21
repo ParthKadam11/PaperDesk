@@ -85,6 +85,25 @@ jobs:
             fi
           done
 
+          echo "==> data stores"
+          docker compose -f infra/docker-compose.yml up -d redis postgres timescale
+          for port in 6379 5432 5434; do
+            ok=0
+            for i in $(seq 1 30); do
+              if ss -ltn | grep -q "127.0.0.1:${port}"; then
+                echo "ok port ${port}"
+                ok=1
+                break
+              fi
+              sleep 2
+            done
+            if [ "$ok" != 1 ]; then
+              echo "FAIL data store not listening on 127.0.0.1:${port}" >&2
+              docker compose -f infra/docker-compose.yml ps >&2 || true
+              exit 1
+            fi
+          done
+
           echo "==> reload pm2"
           pm2 reload ecosystem.config.cjs
           pm2 save
