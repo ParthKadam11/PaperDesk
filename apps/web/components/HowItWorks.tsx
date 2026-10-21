@@ -16,7 +16,11 @@ const SECTIONS = [
   { id: "observe", label: "Observability" },
 ] as const;
 
-export function HowItWorks() {
+export function HowItWorks({
+  guideHref = "/dashboard/apps",
+}: {
+  guideHref?: string;
+} = {}) {
   return (
     <div className="animate-fade-up mx-auto w-full max-w-5xl py-4 sm:py-6">
       <header className="mb-8 max-w-2xl border-b border-zinc-200 pb-6 sm:mb-10 sm:pb-8 dark:border-zinc-800">
@@ -34,7 +38,7 @@ export function HowItWorks() {
         <p className="mt-3 text-sm text-zinc-400">
           For a non-technical walkthrough, see the{" "}
           <Link
-            href="/dashboard/apps"
+            href={guideHref}
             className="font-medium text-zinc-700 underline-offset-4 hover:underline dark:text-zinc-200"
           >
             Guide
@@ -432,7 +436,7 @@ export function HowItWorks() {
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link
-                href="/dashboard/apps"
+                href={guideHref}
                 className={cn(
                   buttonVariants(),
                   "h-9 rounded-md px-4 text-sm font-semibold",

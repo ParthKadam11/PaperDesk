@@ -14,7 +14,11 @@ const SECTIONS = [
   { id: "words", label: "Words you will see" },
 ] as const;
 
-export function MarketExplorer() {
+export function MarketExplorer({
+  systemHref = "/dashboard/how-it-works",
+}: {
+  systemHref?: string;
+} = {}) {
   return (
     <div className="animate-fade-up mx-auto w-full max-w-5xl py-4 sm:py-6">
       <header className="mb-8 max-w-2xl border-b border-zinc-200 pb-6 sm:mb-10 sm:pb-8 dark:border-zinc-800">
@@ -434,7 +438,7 @@ export function MarketExplorer() {
               For the path behind a click — the matching engine, the order
               handoff, and how charts are stored — see{" "}
               <Link
-                href="/dashboard/how-it-works"
+                href={systemHref}
                 className="font-medium text-zinc-950 underline-offset-4 hover:underline dark:text-zinc-50"
               >
                 System
