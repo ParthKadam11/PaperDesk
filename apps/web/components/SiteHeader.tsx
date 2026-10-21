@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { signInWithGoogle } from "@/lib/google-sign-in";
 import { usePathname, useRouter } from "next/navigation";
 
-const REPO = "https://github.com/ParthKadam11/CEX";
+const REPO = "https://github.com/ParthKadam11/PaperDesk";
 
 export function SiteHeader() {
   const pathname = usePathname();
