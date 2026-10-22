@@ -42,8 +42,18 @@
     "turbo": "^2.5.4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.34.7",
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
+  },
+  "pnpm": {
+    "overrides": {
+      "proxy-addr": "2.0.8",
+      "shell-quote": "1.11.0",
+      "undici": "7.29.1",
+      "fast-uri": "3.1.7",
+      "@modelcontextprotocol/sdk": "1.32.0",
+      "mysql2": "3.22.0"
+    }
   }
 }

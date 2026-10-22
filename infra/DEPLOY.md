@@ -70,7 +70,7 @@ Browser ──HTTPS──► Vercel
 Browser ──EventSource──► ENGINE_GATEWAY_PUBLIC_URL/…/stream?ticket=…
 ```
 
-Use `render.yaml` blueprint; build with `npx pnpm@10.14.0 install --frozen-lockfile`. Pin Node 20.x. Mount a WAL disk for exchange and set `EXCHANGE_DATA_DIR`. Copy generated tokens into Vercel; set gateway `CORS_ORIGINS` to the Vercel origin. OAuth callback: `https://<vercel-domain>/api/auth/callback/google`.
+Use `render.yaml` blueprint; build with `npx pnpm@10.34.7 install --frozen-lockfile`. Pin Node 22.x. Mount a WAL disk for exchange and set `EXCHANGE_DATA_DIR`. Copy generated tokens into Vercel; set gateway `CORS_ORIGINS` to the Vercel origin. OAuth callback: `https://<vercel-domain>/api/auth/callback/google`.
 
 Never use `127.0.0.1` in Vercel ↔ Render URLs. `SIM_HEARTBEAT` is unreliable on Vercel serverless.
 

@@ -24,8 +24,8 @@ services:
     plan: starter
     region: oregon
     # Avoid corepack enable (EROFS) and pnpm -g (no global bin on Render).
-    buildCommand: npx pnpm@10.14.0 install --frozen-lockfile
-    startCommand: npx pnpm@10.14.0 --filter @cex/exchange start
+    buildCommand: npx pnpm@10.34.7 install --frozen-lockfile
+    startCommand: npx pnpm@10.34.7 --filter @cex/exchange start
     healthCheckPath: /health/live
     disk:
       name: cex-exchange-wal
@@ -51,8 +51,8 @@ services:
     plan: starter
     region: oregon
     # Avoid `corepack enable` on Render (EROFS on /usr/bin/pnpm).
-    buildCommand: npx pnpm@10.14.0 install --frozen-lockfile
-    startCommand: npx pnpm@10.14.0 --filter @cex/engine-gateway start
+    buildCommand: npx pnpm@10.34.7 install --frozen-lockfile
+    startCommand: npx pnpm@10.34.7 --filter @cex/engine-gateway start
     healthCheckPath: /health/live
     envVars:
       - key: NODE_ENV
@@ -91,9 +91,9 @@ services:
     plan: starter
     region: oregon
     # Avoid `corepack enable` on Render (EROFS on /usr/bin/pnpm).
-    buildCommand: npx pnpm@10.14.0 install --frozen-lockfile
-    startCommand: npx pnpm@10.14.0 --filter @cex/oms start
-    preDeployCommand: npx pnpm@10.14.0 db:migrate:deploy
+    buildCommand: npx pnpm@10.34.7 install --frozen-lockfile
+    startCommand: npx pnpm@10.34.7 --filter @cex/oms start
+    preDeployCommand: npx pnpm@10.34.7 db:migrate:deploy
     healthCheckPath: /health/live
     envVars:
       - key: NODE_ENV
@@ -117,8 +117,8 @@ services:
     plan: starter
     region: oregon
     # Avoid `corepack enable` on Render (EROFS on /usr/bin/pnpm).
-    buildCommand: npx pnpm@10.14.0 install --frozen-lockfile
-    startCommand: npx pnpm@10.14.0 --filter @cex/ingester start
+    buildCommand: npx pnpm@10.34.7 install --frozen-lockfile
+    startCommand: npx pnpm@10.34.7 --filter @cex/ingester start
     healthCheckPath: /health/live
     envVars:
       - key: NODE_ENV

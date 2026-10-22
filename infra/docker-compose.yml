@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:7-alpine
+    image: redis:7.4.11-alpine
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
 
   postgres:
-    image: postgres:16-alpine
+    image: postgres:16.15-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
@@ -48,7 +48,7 @@ services:
 
   # Host network so scrapes can reach PM2 apps bound to 127.0.0.1.
   prometheus:
-    image: prom/prometheus:v2.55.1
+    image: prom/prometheus:v3.15.1
     network_mode: host
     command:
       - --config.file=/etc/prometheus/prometheus.yml
@@ -63,7 +63,7 @@ services:
 
   # Same host network so Grafana can reach Prometheus on 127.0.0.1:9090.
   grafana:
-    image: grafana/grafana:11.2.0
+    image: grafana/grafana:12.4.13
     network_mode: host
     environment:
       GF_SERVER_HTTP_ADDR: "127.0.0.1"
