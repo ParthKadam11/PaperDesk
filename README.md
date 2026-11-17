@@ -38,10 +38,6 @@ Spot and perpetuals for SOL on one book. Sign in, credit SOL and USD, and place.
 
 ---
 
-## Why it exists
-
-Most “paper trading” demos are a CRUD ticket on top of a fake book. PaperDesk is built to study what actually happens after someone clicks **Buy**: matching, balance locks, durable order flow, market-data persistence, and perpetual risk.
-
 It is a systems product:
 
 - a **single-writer matching engine** with WAL + snapshots
