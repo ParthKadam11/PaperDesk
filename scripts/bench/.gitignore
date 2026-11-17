@@ -1,0 +1,7 @@
+# ephemeral per-run outputs
+k6-summary.json
+last-run.json
+recovery-last-run.json
+matcher-last-run.json
+
+# keep showcase-last-run.json tracked (committed headline numbers)

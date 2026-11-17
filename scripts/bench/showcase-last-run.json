@@ -1,0 +1,64 @@
+{
+  "hardware": {
+    "hostname": "vmi3586283",
+    "cpus": 4,
+    "memGb": 7.8,
+    "platform": "Linux 6.8.0-147-generic",
+    "node": "v20.20.2"
+  },
+  "headline": {
+    "matchesPerSec": 67547,
+    "bookInsertsPerSec": 651527,
+    "httpPlacePerSec": 511.5,
+    "crashRecoveryMs": 3,
+    "errors": 0
+  },
+  "matcher": {
+    "note": "Pure MatchingEngine + OrderBook in one Node process. No HTTP, Redis, Postgres, or WAL.",
+    "book_adds": {
+      "ops": 500000,
+      "ms": 767.4,
+      "perSec": 651527,
+      "nsPerOp": 1535
+    },
+    "matches": {
+      "takers": 1000000,
+      "trades": 1000000,
+      "ms": 14804.5,
+      "takersPerSec": 67547,
+      "tradesPerSec": 67547,
+      "nsPerTaker": 14804
+    },
+    "capturedAt": "2026-11-17T09:48:50.145Z"
+  },
+  "http": {
+    "note": "k6 place+cancel against isolated exchange API, SLEEP=0",
+    "vus_8": {
+      "placePerSec": 160.7,
+      "cancelPerSec": 160.7,
+      "place_p50": 21,
+      "place_p95": 46,
+      "place_p99": 89,
+      "errors": 0
+    },
+    "vus_64": {
+      "placePerSec": 433.2,
+      "cancelPerSec": 433.2,
+      "place_p50": 60,
+      "place_p95": 150,
+      "place_p99": 285,
+      "errors": 0
+    },
+    "vus_128": {
+      "placePerSec": 511.5,
+      "cancelPerSec": 511.5,
+      "place_p50": 104,
+      "place_p95": 298,
+      "place_p99": 374.84,
+      "errors": 0
+    }
+  },
+  "crash_recovery_ms": 3,
+  "crash_ok": true,
+  "capturedAt": "2026-11-17T09:56:00.000Z"
+}

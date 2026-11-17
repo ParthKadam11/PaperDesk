@@ -34,7 +34,11 @@
     "test:ingester": "pnpm --filter @cex/ingester test",
     "test:gateway:unit": "pnpm --filter @cex/engine-gateway test:unit",
     "test:ci": "pnpm test:exchange:unit && pnpm test:oms && pnpm test:gateway:unit && pnpm test:ingester",
-    "typecheck": "pnpm --filter @cex/exchange build && pnpm --filter @cex/engine-gateway build && pnpm --filter @cex/oms build && pnpm --filter @cex/ingester build"
+    "typecheck": "pnpm --filter @cex/exchange build && pnpm --filter @cex/engine-gateway build && pnpm --filter @cex/oms build && pnpm --filter @cex/ingester build",
+    "bench:latency": "node scripts/bench/run-latency.mjs",
+    "bench:recovery": "node scripts/bench/crash-recovery.mjs",
+    "bench:matcher": "pnpm --filter @cex/exchange exec tsx ../../scripts/bench/matcher-bench.ts",
+    "bench:showcase": "node scripts/bench/run-showcase.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
